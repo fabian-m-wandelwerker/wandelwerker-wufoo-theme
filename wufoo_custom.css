@@ -9,27 +9,27 @@
 - - - - - - - - - - - - - - - - - - - - - */
 
 /* ── FONTS ── */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&display=swap');
 
 /* ── VARIABLES ── */
 :root {
   --white:          #ffffff;
-  --off-white:      #f8f7f4;
-  --bg-subtle:      #f2f0ec;
-  --border:         #e4e0d8;
-  --border-strong:  #ccc8be;
-  --text:           #1a1917;
-  --text-secondary: #4a4640;
-  --text-muted:     #7a7670;
-  --text-light:     #a09c96;
-  --accent:         #1a4fd6;
-  --accent-light:   #eef2fd;
-  --accent-hover:   #1340b8;
-  --font:           'Inter', sans-serif;
-  --serif:          'Fraunces', Georgia, serif;
+  --off-white:      #f5f7ff;
+  --bg-subtle:      #edf1ff;
+  --border:         #d0d9f0;
+  --border-strong:  #a0b0d8;
+  --text:           #000000;
+  --text-secondary: #072659;
+  --text-muted:     #3a4f7a;
+  --text-light:     #7a8fb0;
+  --accent:         #277AFF;
+  --accent-light:   #e8f0ff;
+  --accent-hover:   #1a63d4;
+  --dark:           #072659;
+  --font:           'Archivo', sans-serif;
   --radius:         10px;
   --radius-lg:      16px;
-  --shadow-lg:      0 12px 40px rgba(0,0,0,0.1), 0 4px 12px rgba(0,0,0,0.05);
+  --shadow-lg:      0 12px 40px rgba(7,38,89,0.12), 0 4px 12px rgba(7,38,89,0.07);
 }
 
 /* ── RESET ── */
@@ -61,12 +61,12 @@ html {
   position: relative;
 }
 
-/* Blauer Balken oben (wie .hero-form-card::before) */
+/* Blauer Balken oben */
 #container::before {
   content: '';
   display: block;
   height: 4px;
-  background: linear-gradient(90deg, var(--accent), #3b82f6);
+  background: linear-gradient(90deg, var(--dark), var(--accent));
 }
 
 /* ── FORM HEADER ── */
@@ -77,10 +77,10 @@ html {
 }
 
 .wufoo .info h2 {
-  font-family: var(--serif);
+  font-family: var(--font);
   font-size: 1.25rem;
-  font-weight: 700;
-  color: var(--text);
+  font-weight: 800;
+  color: var(--dark);
   letter-spacing: -0.02em;
   line-height: 1.2;
   margin-bottom: 0.35rem;
@@ -171,7 +171,7 @@ html {
 .wufoo .focused textarea.textarea {
   border-color: var(--accent);
   background: var(--white);
-  box-shadow: 0 0 0 3px rgba(26, 79, 214, 0.08);
+  box-shadow: 0 0 0 3px rgba(39, 122, 255, 0.1);
 }
 
 /* ── SELECT ── */
@@ -179,7 +179,7 @@ html {
   width: 100%;
   padding: 0.65rem 2rem 0.65rem 0.85rem;
   background-color: var(--off-white);
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%237a7670' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%233a4f7a' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 0.85rem center;
   border: 1px solid var(--border);
@@ -198,7 +198,7 @@ html {
 .wufoo select.select:focus {
   border-color: var(--accent);
   background-color: var(--white);
-  box-shadow: 0 0 0 3px rgba(26, 79, 214, 0.08);
+  box-shadow: 0 0 0 3px rgba(39, 122, 255, 0.1);
 }
 
 /* ── RADIO & CHECKBOX ── */
@@ -224,7 +224,7 @@ html {
 /* ── INSTRUCTIONS ── */
 .wufoo .instruct {
   background: var(--accent-light);
-  border: 1px solid rgba(26, 79, 214, 0.15);
+  border: 1px solid rgba(39, 122, 255, 0.2);
   border-radius: 8px;
   padding: 0.6rem 0.85rem;
   margin-top: 0.4rem;
@@ -264,7 +264,7 @@ html {
 #saveForm:hover {
   background: var(--accent-hover);
   transform: translateY(-1px);
-  box-shadow: 0 4px 16px rgba(26, 79, 214, 0.3);
+  box-shadow: 0 4px 16px rgba(39, 122, 255, 0.35);
 }
 
 /* ── PAGINATION (Nächste Seite / Zurück) ── */
@@ -304,13 +304,13 @@ html {
 #navigation .prev,
 #navigation input[type="button"] {
   background: var(--white);
-  color: var(--text);
+  color: var(--dark);
   border: 1.5px solid var(--border-strong);
 }
 
 #navigation .prev:hover,
 #navigation input[type="button"]:hover {
-  border-color: var(--text);
+  border-color: var(--dark);
 }
 
 /* Page-Counter (1/3) */
