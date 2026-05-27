@@ -3,9 +3,6 @@
  Title : WandelWerker Arbeitssicherheit-Memo 2026
  URL : https://wandelwerker.de
 
- Passt das Wufoo-Formular an das Design der
- WandelWerker Landingpage an.
-
 - - - - - - - - - - - - - - - - - - - - - */
 
 /* ── FONTS ── */
@@ -14,8 +11,8 @@
 /* ── VARIABLES ── */
 :root {
   --white:          #ffffff;
-  --off-white:      #f5f7ff;
-  --bg-subtle:      #edf1ff;
+  --field-bg:       #fafbfc;
+  --field-border:   #eeeeee;
   --border:         #d0d9f0;
   --border-strong:  #a0b0d8;
   --text:           #000000;
@@ -27,7 +24,7 @@
   --accent-hover:   #1a63d4;
   --dark:           #072659;
   --font:           'Archivo', sans-serif;
-  --radius:         10px;
+  --radius:         0.3rem;
   --radius-lg:      16px;
   --shadow-lg:      0 12px 40px rgba(7,38,89,0.12), 0 4px 12px rgba(7,38,89,0.07);
 }
@@ -39,7 +36,7 @@
 
 /* ── PAGE / CONTAINER ── */
 html {
-  background: var(--off-white);
+  background: var(--white);
   font-family: var(--font);
   -webkit-font-smoothing: antialiased;
 }
@@ -62,12 +59,12 @@ html {
   position: relative;
 }
 
-/* Blauer Balken oben */
+/* Einfarbiger blauer Balken oben */
 #container::before {
   content: '';
   display: block;
   height: 4px;
-  background: linear-gradient(90deg, var(--dark), var(--accent));
+  background: #277AFF;
 }
 
 /* ── FORM HEADER ── */
@@ -87,11 +84,12 @@ html {
   margin-bottom: 0.35rem;
 }
 
+/* Beschreibung unter Titel: #fafbfc Farbe */
 .wufoo .info div {
   font-family: var(--font);
   font-size: 16px;
   font-weight: 400;
-  color: var(--text-muted);
+  color: #fafbfc;
   line-height: 1.5;
 }
 
@@ -139,7 +137,7 @@ html {
 .wufoo label.desc .req,
 .wufoo legend.desc .req {
   color: var(--accent);
-  font-weight: 700;
+  font-weight: 500;
   margin-left: 1px;
 }
 
@@ -148,9 +146,9 @@ html {
 .wufoo textarea.textarea {
   width: 100%;
   padding: 0.65rem 0.85rem;
-  background: var(--off-white);
-  border: 1px solid var(--border);
-  border-radius: 8px;
+  background: #fafbfc;
+  border: 1px solid #eeeeee;
+  border-radius: var(--radius);
   color: var(--text);
   font-family: var(--font);
   font-size: 16px;
@@ -179,16 +177,17 @@ html {
 /* ── SELECT ── */
 .wufoo select.select {
   width: 100%;
-  padding: 0.65rem 2rem 0.65rem 0.85rem;
-  background-color: var(--off-white);
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%233a4f7a' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  padding: 0.65rem 2.5rem 0.65rem 0.85rem;
+  background-color: #fafbfc;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23072659' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 0.85rem center;
-  border: 1px solid var(--border);
-  border-radius: 8px;
+  border: 1px solid #eeeeee;
+  border-radius: var(--radius);
   color: var(--text);
   font-family: var(--font);
-  font-size: 0.875rem;
+  font-size: 16px;
+  font-weight: 400;
   line-height: 1.5;
   transition: border-color 0.15s, background-color 0.15s;
   outline: none;
@@ -218,7 +217,8 @@ html {
 .wufoo li span label,
 .wufoo label.choice {
   font-family: var(--font);
-  font-size: 0.875rem;
+  font-size: 16px;
+  font-weight: 400;
   color: var(--text-secondary);
   cursor: pointer;
 }
@@ -227,7 +227,7 @@ html {
 .wufoo .instruct {
   background: var(--accent-light);
   border: 1px solid rgba(39, 122, 255, 0.2);
-  border-radius: 8px;
+  border-radius: var(--radius);
   padding: 0.6rem 0.85rem;
   margin-top: 0.4rem;
 }
@@ -235,7 +235,8 @@ html {
 .wufoo .instruct small,
 .wufoo .instruct {
   font-family: var(--font);
-  font-size: 0.75rem;
+  font-size: 16px;
+  font-weight: 400;
   color: var(--accent);
   line-height: 1.55;
 }
@@ -245,20 +246,20 @@ html {
 .wufoo button[type="submit"],
 #saveForm {
   width: 100%;
-  padding: 0.875rem 1.5rem;
+  padding: 0.75rem 1rem;
   background: var(--accent);
   color: #ffffff;
   border: none;
-  border-radius: var(--radius);
+  border-radius: 0.3rem;
   font-family: var(--font);
-  font-size: 0.95rem;
-  font-weight: 700;
+  font-size: 16px;
+  font-weight: 400;
   cursor: pointer;
   transition: background 0.15s, transform 0.15s, box-shadow 0.15s;
   margin-top: 0.5rem;
   display: block;
   text-align: center;
-  letter-spacing: 0.01em;
+  letter-spacing: 0;
 }
 
 .wufoo input[type="submit"]:hover,
@@ -279,11 +280,11 @@ html {
 
 #navigation input,
 #navigation button {
-  padding: 0.65rem 1.25rem;
-  border-radius: var(--radius);
+  padding: 0.75rem 1rem;
+  border-radius: 0.3rem;
   font-family: var(--font);
-  font-size: 0.875rem;
-  font-weight: 600;
+  font-size: 16px;
+  font-weight: 400;
   cursor: pointer;
   transition: all 0.15s;
   border: none;
@@ -307,7 +308,7 @@ html {
 #navigation input[type="button"] {
   background: var(--white);
   color: var(--dark);
-  border: 1.5px solid var(--border-strong);
+  border: 1px solid #eeeeee;
 }
 
 #navigation .prev:hover,
@@ -318,9 +319,9 @@ html {
 /* Page-Counter (1/3) */
 #pagination {
   font-family: var(--font);
-  font-size: 0.78rem;
+  font-size: 16px;
   color: var(--text-muted);
-  font-weight: 500;
+  font-weight: 400;
 }
 
 /* ── ERRORS ── */
@@ -328,9 +329,10 @@ html {
 .wufoo .errBoxBody {
   background: #fff8f7;
   border: 1px solid #fecaca;
-  border-radius: 8px;
+  border-radius: var(--radius);
   font-family: var(--font);
-  font-size: 0.82rem;
+  font-size: 16px;
+  font-weight: 400;
   color: #991b1b;
   padding: 0.65rem 0.85rem;
 }
