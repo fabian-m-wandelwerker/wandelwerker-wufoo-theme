@@ -126,7 +126,7 @@ html {
 .wufoo legend.desc {
   display: block;
   font-family: var(--font);
-  font-size: 16px;
+  font-size: 12px;
   font-weight: 500;
   color: var(--text-secondary);
   margin-bottom: 0.35rem;
@@ -198,8 +198,13 @@ html {
 
 .wufoo select.select:focus {
   border-color: var(--accent);
-  background-color: var(--white);
-  box-shadow: 0 0 0 3px rgba(39, 122, 255, 0.1);
+  background-color: #fafbfc;
+  box-shadow: none;
+  outline: none;
+}
+
+.wufoo select.select:focus-visible {
+  outline: none;
 }
 
 /* ── RADIO & CHECKBOX ── */
