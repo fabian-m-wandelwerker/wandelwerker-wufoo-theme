@@ -27,7 +27,8 @@
   box-sizing: border-box;
 }
 
-html {
+html,
+body {
   background: var(--white);
   font-family: var(--font);
   font-size: 16px;
@@ -44,13 +45,6 @@ html {
   background: var(--white);
   overflow: hidden;
   position: relative;
-}
-
-#container::before {
-  content: "";
-  display: block;
-  height: 0.25rem;
-  background: var(--accent);
 }
 
 /* ── HEADER ── */
@@ -70,7 +64,6 @@ html {
 
 .wufoo .info div {
   font-size: 1rem;
-  font-weight: 400;
   color: var(--text-muted);
   line-height: 1.5;
 }
@@ -95,6 +88,7 @@ html {
   list-style: none;
   margin: 0;
 }
+
 .wufoo li {
   margin-bottom: 0.85rem;
 }
@@ -129,7 +123,6 @@ html {
   color: var(--text);
   font-family: var(--font);
   font-size: 1rem;
-  font-weight: 400;
   line-height: 1.5;
   transition:
     border-color 0.15s,
@@ -146,11 +139,13 @@ html {
 
 .wufoo input.text:focus,
 .wufoo textarea.textarea:focus,
+.wufoo select.select:focus,
 .wufoo .focused input.text,
 .wufoo .focused textarea.textarea {
   border-color: var(--accent);
   background: var(--white);
   box-shadow: 0 0 0 0.2rem rgba(39, 122, 255, 0.1);
+  outline: none;
 }
 
 /* Select: extra padding rechts für Pfeil */
@@ -160,17 +155,6 @@ html {
   background-repeat: no-repeat;
   background-position: right 0.85rem center;
   cursor: pointer;
-}
-
-.wufoo select.select:focus {
-  border-color: var(--accent);
-  background-color: var(--field-bg);
-  box-shadow: none;
-  outline: none;
-}
-
-.wufoo select.select:focus-visible {
-  outline: none;
 }
 
 /* ── RADIO & CHECKBOX ── */
@@ -188,7 +172,6 @@ html {
 .wufoo li span label,
 .wufoo label.choice {
   font-size: 1rem;
-  font-weight: 400;
   color: var(--text-sub);
   cursor: pointer;
 }
@@ -201,7 +184,6 @@ html {
   padding: 0.6rem 0.85rem;
   margin-top: 0.4rem;
   font-size: 1rem;
-  font-weight: 400;
   color: var(--accent);
   line-height: 1.55;
 }
@@ -214,22 +196,21 @@ html {
 .wufoo input[type="submit"],
 .wufoo button[type="submit"],
 #saveForm {
-  width: 100%;
-  padding: 0.75rem 1rem;
+  width: auto;
+  padding: 0.75rem 1.5rem;
   background: var(--accent);
   color: var(--white);
   border: none;
   border-radius: var(--radius);
   font-family: var(--font);
   font-size: 1rem;
-  font-weight: 400;
   cursor: pointer;
   transition:
     background 0.15s,
     transform 0.15s,
     box-shadow 0.15s;
   margin-top: 0.5rem;
-  display: block;
+  display: inline-block;
   text-align: center;
 }
 
@@ -239,6 +220,13 @@ html {
   background: var(--accent-hover);
   transform: translateY(-0.05rem);
   box-shadow: 0 0.25rem 1rem rgba(39, 122, 255, 0.35);
+}
+
+.wufoo input[type="submit"]:focus-visible,
+.wufoo button[type="submit"]:focus-visible,
+#saveForm:focus-visible {
+  outline: 0.2rem solid var(--accent);
+  outline-offset: 0.2rem;
 }
 
 /* ── NAVIGATION (mehrseitige Formulare) ── */
@@ -255,7 +243,6 @@ html {
   border-radius: var(--radius);
   font-family: var(--font);
   font-size: 1rem;
-  font-weight: 400;
   cursor: pointer;
   transition: all 0.15s;
   border: none;
@@ -286,7 +273,6 @@ html {
 
 #pagination {
   font-size: 1rem;
-  font-weight: 400;
   color: var(--text-muted);
 }
 
@@ -297,7 +283,6 @@ html {
   border: 1px solid #fecaca;
   border-radius: var(--radius);
   font-size: 1rem;
-  font-weight: 400;
   color: #991b1b;
   padding: 0.65rem 0.85rem;
 }
@@ -311,7 +296,7 @@ html {
 
 /* ── FOOTER ── */
 #footer {
-  padding: 0.5rem 2rem;
+  padding: 1.5rem 2rem;
   text-align: center;
 }
 
